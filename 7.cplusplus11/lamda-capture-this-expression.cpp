@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Test {
+private:
+    int one{1};
+    int two{2};
+
+public:
+    void run() {
+        int three{3};
+        int four{4};
+
+        auto pLamda = [&, this](){ 
+            cout << one << " " << two << endl;
+            cout << three << " " << four << endl;
+        };
+        pLamda();
+    }
+};
+
+int main() {
+    Test test;
+    test.run();
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+void test(void (*pFunc)()) {
+    pFunc();
+}
+
+int main() {
+    int one = 1;
+    int two = 2;
+    int three = 3;
+    
+    // Capture one and two by value
+    [one, two](){ cout << one << ", " << two << endl; }();
+
+    // Capture all local variables by value
+    [=](){ cout << one << ", " << two << endl; }();
+
+    // Default capture all local variables by value, but capture three by reference
+    [=, &three](){three=7; cout << one << ", " << two << endl; }();
+    cout << three << endl;
+
+    // Default capture all local variables by reference
+    [&](){three=5; cout << one << ", " << two << endl; }();
+    cout << three << endl;
+    
+    // Default capture all local variables by reference, but two and three by value
+    [&, two, three](){one=1; cout << one << ", " << two << endl; }();
+    cout << three << endl;
+
+    return 0;
+}
