@@ -49,6 +49,15 @@
         "stack": "cpp",
         "queue": "cpp",
         "complex": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "ctime": "cpp",
+        "set": "cpp",
+        "ratio": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "condition_variable": "cpp",
+        "chrono": "cpp",
+        "mutex": "cpp"
     }
 }
